@@ -35,7 +35,7 @@ def save_mfcc(dataset_path, json_path, n_mfcc=13, n_fft=2048, hop_length=512, nu
             dirpath_components = dirpath.split('/') #gender/blues => ['gender','blues']
             semantic_label = dirpath_components[-1] 
             data['mapping'].append(semantic_label)
-            print('\nProcessing {}'.format(semantic_label))
+            print('\nProcessing: {}'.format(semantic_label))
 
             #go throught all the files in the fold
             for f in filenames: 
@@ -50,7 +50,7 @@ def save_mfcc(dataset_path, json_path, n_mfcc=13, n_fft=2048, hop_length=512, nu
                     finish_sample = start_sample + num_samples_per_segment  #s=0 -> num_samples_per_segment
                     
                     mfcc = librosa.feature.mfcc(signal[start_sample:finish_sample],
-                                                sr=sr,
+                                                sr,
                                                 n_fft = n_fft,
                                                 n_mffc = n_mfcc,
                                                 hop_length = hop_length)
@@ -60,10 +60,10 @@ def save_mfcc(dataset_path, json_path, n_mfcc=13, n_fft=2048, hop_length=512, nu
                     if len(mfcc) == expected_num_mfcc_vector_per_segment:
                         data['mfcc'].append(mfcc.tolist())
                         data['labels'].append(i-1)
-                        print('{}, segment:{}'.format(file_path, s))
+                        print('{}, segment:{}'.format(file_path, s+1))
 
     with open(json_path, 'w') as fp:
         json.dump(data, fp, indent=4)
 
-if __name__ == '__name__':
+if __name__ == '__main__':
     save_mfcc(dataset_path, json_path, num_segments=10)
