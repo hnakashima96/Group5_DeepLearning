@@ -31,6 +31,11 @@ if __name__ == '__main__':
         #flatten the dimension of a input (2D)
         keras.layers.Flatten(input_shape=(inputs.shape[1], inputs.shape[2])),
 
+    # build the NN 
+    model3 = keras.Sequential([
+        #flatten the dimension of a input (2D)
+        keras.layers.Flatten(input_shape=(inputs.shape[1], inputs.shape[2])),
+
         #avoid vanishing gradient (relu function)
         keras.layers.Dense(512, activation = 'relu'), #effective for training the data (faster)
         keras.layers.Dense(256, activation = 'relu'),
@@ -40,7 +45,7 @@ if __name__ == '__main__':
         keras.layers.Dense(10, activation='softmax') 
     ])
 #compile the network
-model.compile(optimizer='adam',
+model3.compile(optimizer='rmsprop',
             loss='sparse_categorical_crossentropy',
             metrics=['accuracy'])
 
