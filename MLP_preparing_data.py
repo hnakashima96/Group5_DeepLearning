@@ -1,12 +1,16 @@
+#import the basic libraries
 import os
 import librosa
 import math
 import json
 
-dataset_path = r'C:\Users\hirom\Documents\GitHub\Group5_DeepLearning\genres'
+#path of the dataset 
+dataset_path = r'...\GitHub\Group5_DeepLearning\genres'
+#empty .json file to store the data information
 json_path = 'data_oficial.json'
 
-SAMPLE_RATE = 22050
+#music parameters to generate the MFCCs 
+SAMPLE_RATE = 22050 #frequency
 DURATION = 30 #measured in seconds 
 SAMPLES_PER_TRACK = SAMPLE_RATE * DURATION
 
