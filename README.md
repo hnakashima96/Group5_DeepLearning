@@ -10,8 +10,4 @@ General_Data_Understanding.py
 #MLP
 - MLP_preparing_data.py : processing of the data to apply the MLP model
 - MLP_class.py: final model of classification of MLP 
-
-#CNN
--CNN_xray_sound.py: MFCCs plot to classification 
--CNN_split_classes.py: split into folders of the MFCCs plots to be analysed 
--CNN_class.py: model classification of the images  
+  
