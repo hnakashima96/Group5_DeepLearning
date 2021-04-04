@@ -9,5 +9,5 @@ General_Data_Understanding.py
 
 #MLP
 - MLP_preparing_data.py : processing of the data to apply the MLP model
-- MLP_class.py: final model of classification of MLP 
+- MODEL_(N).py: final model of classification of MLP, each N is represented by the number of the model explained in the report.
   
