@@ -54,6 +54,9 @@ history_track = model.fit(inputs_train,targets_train,
             batch_size=32,
             verbose=1)   #way the NN is trained 
 
+#Evaluation of the model as values
+accr = model.evaluate(inputs_test,targets_test)
+
 #visualization
 import matplotlib.pyplot as plt 
 #print(history_track.history.keys())
